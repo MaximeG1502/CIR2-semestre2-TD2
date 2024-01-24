@@ -1,0 +1,14 @@
+fonction est_premier(entier n):
+    si n <= 1:
+        afficher("pas premier")
+        retourner
+
+    pour i de 2 à n-1:
+        reste = n % i
+        si reste == 0:
+            afficher("pas premier")
+            retourner
+
+    afficher("premier")
+
+
