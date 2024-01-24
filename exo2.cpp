@@ -2,23 +2,31 @@
 #include <iostream>
 
 
-void est_premier(const int n){
-    if (n<= 1){
-        std::cout << "pas premier"<< std::endl;
+bool est_premier(int n){
+    if(n <=1){
+        std::cout << "pas premier" <<std::endl;
+        return false;
     }
+    int i=2;
+    bool premier = true;
 
-    for (int i=2;i<= n-1;i++){
+    while(premier && i<= n-1){
         int reste = n%i;
         if(reste ==0){
-            std::cout <<"pas premier"<<std::endl;
+            std::cout << "pas premier" <<std::endl;
+            premier = false;
         }
+        ++i;
     }
-    std::cout << "premier"<<std::endl;
+    if(premier){
+        std::cout << " premier" <<std::endl;
+    }
+    return premier;
 }
 
 int main(){
 
-    const int n = 2000;
+    const int n = 3;
     est_premier(n);
 
 
